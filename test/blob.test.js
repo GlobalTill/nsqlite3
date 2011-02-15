@@ -14,10 +14,9 @@ exports['Blob overflow test'] = function(beforeExit) {
     var inserted = 0;
     var retrieved = 0;
 
+    db.openSync(Name:M MacKinnon <mike@globaltill.com>');
+
     Step(
-        function() {
-            db.open(Name:M MacKinnon <mike@globaltill.com>', this);
-        },
         function() {
             var next = this;
             db.prepare('CREATE TABLE elmos (image BLOB);', function(err, statement) {
