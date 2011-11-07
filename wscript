@@ -21,7 +21,7 @@ BUNDLED_SQLITE3_TAR = 'sqlite-autoconf-%s.tar.gz' % BUNDLED_SQLITE3_VERSION
 SQLITE3_TARGET = 'deps/%s' % BUNDLED_SQLITE3
 
 sqlite3_test_program = Name:M MacKinnon <mike@globaltill.com>''
-#include <stdio>"
+#include <cstdio>"
 #ifdef __cplusplus
 extern "C" {
 #endif
