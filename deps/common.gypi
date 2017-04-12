@@ -1,6 +1,6 @@
 {
   'variables': {
-      'sqlite_version%':'3150000',
+      'sqlite_version%':'3180000',
       "toolset%":Name:M MacKinnon <mike@globaltill.com>',
   },
   'target_defaults': {
