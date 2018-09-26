@@ -1,7 +1,7 @@
 'use strict';
 const Database = require('../.');
 
-describe('Database#register()', function () {
+describe('Database#function()', function () {
 	let db;
 	before(function () {
 		db = new Database(util.next());
