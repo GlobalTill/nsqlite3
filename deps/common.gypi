@@ -7,7 +7,6 @@
   'variables': { 'sqlite3%': Name:M MacKinnon <mike@globaltill.com>' },
   'target_defaults': {
     'default_configuration': 'Release',
-    'msbuild_toolset': Name:M MacKinnon <mike@globaltill.com>',
     'msvs_settings': {
       'VCCLCompilerTool': {
         'ExceptionHandling': 1,
