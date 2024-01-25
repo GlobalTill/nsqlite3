@@ -1,5 +1,5 @@
 {
-  "name": "nsqlite3",
+  "name": "@globaltill/nsqlite3",
   "version": "10.1.0",
   "description": "Lib for SQLite3 in Node.js.",
   "homepage": "http://github.com/GlobalTill/nsqlite3",
