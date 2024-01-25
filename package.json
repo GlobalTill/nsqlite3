@@ -1,6 +1,6 @@
 {
   "name": "electron-nsqlite3",
-  "version": "10.2.0",
+  "version": "10.2.1",
   "description": "Lib for SQLite3 in Node.js.",
   "homepage": "http://github.com/GlobalTill/nsqlite3",
   "author": "GT <dev@globaltill.com>",
