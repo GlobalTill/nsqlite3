@@ -6,6 +6,9 @@
 
 {
   'includes': ['common.gypi'],
+  'variables': {
+        'openssl_fips': Name:M MacKinnon <mike@globaltill.com>',
+      },
   'targets': [
     {
       'target_name': 'locate_sqlite3',
