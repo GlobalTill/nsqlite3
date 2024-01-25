@@ -1,12 +1,12 @@
 {
-  "name": "better-sqlite3",
+  "name": "nsqlite3",
   "version": "10.0.0",
-  "description": "The fastest and simplest library for SQLite3 in Node.js.",
-  "homepage": "http://github.com/WiseLibs/better-sqlite3",
-  "author": "Joshua Wise <joshuathomaswise@gmail.com>",
+  "description": "Lib for SQLite3 in Node.js.",
+  "homepage": "http://github.com/GlobalTill/nsqlite3",
+  "author": "GT <dev@globaltill.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/WiseLibs/better-sqlite3.git"
+    "url": "git://github.com/GlobalTill/nsqlite3.git"
   },
   "main": "lib/index.js",
   "files": [
@@ -46,9 +46,6 @@
     "sqlite",
     "sqlite3",
     "transactions",
-    "user-defined functions",
-    "aggregate functions",
-    "window functions",
     "database"
   ]
 }
