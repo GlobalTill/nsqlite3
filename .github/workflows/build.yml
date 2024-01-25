@@ -42,20 +42,20 @@ jobs:
       - run: npm run build-debug
       - run: npm test
 
-#  publish:
-#    if: ${{ github.event_name == 'release' }}
-#    name: Publishing to NPM
-#    runs-on: ubuntu-20.04
-#    needs: test
-#    steps:
-#      - uses: actions/checkout@v4
-#      - uses: actions/setup-node@v4
-#        with:
-#          node-version: 16
-#          registry-url: https://registry.npmjs.org
-#      - run: npm publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  publish:
+    if: ${{ github.event_name == 'release' }}
+    name: Publishing to NPM
+    runs-on: ubuntu-20.04
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   prebuild:
     strategy:
