@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
       - master
@@ -13,8 +13,8 @@ on:
   workflow_dispatch: {}
 
 env:
-  NODE_BUILD_CMD: npx --no-install prebuild -r node -t 18.0.0 -t 20.0.0 -t 21.0.0 --include-regex 'better_sqlite3.node$'
-  ELECTRON_BUILD_CMD: npx --no-install prebuild -r electron -t 16.0.0 -t 17.0.0 -t 18.0.0 -t 19.0.0 -t 20.0.0 -t 21.0.0 -t 22.0.0 -t 23.0.0 -t 24.0.0 -t 25.0.0 -t 26.0.0 -t 27.0.0 -t 28.0.0 --include-regex 'better_sqlite3.node$'
+  NODE_BUILD_CMD: npx --no-install prebuild -r node -t 16.0.0 -t 18.0.0 --include-regex 'better_sqlite3.node$'
+  ELECTRON_BUILD_CMD: npx --no-install prebuild -r electron -t 5.0.0 -t 28.0.0 --include-regex 'better_sqlite3.node$'
 
 jobs:
   test:
@@ -25,9 +25,8 @@ jobs:
           - macos-latest
           - windows-2019
         node:
+          - 16
           - 18
-          - 20
-          - 21
     name: Testing Node ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -43,20 +42,20 @@ jobs:
       - run: npm run build-debug
       - run: npm test
 
-  publish:
-    if: ${{ github.event_name == 'release' }}
-    name: Publishing to NPM
-    runs-on: ubuntu-20.04
-    needs: test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#  publish:
+#    if: ${{ github.event_name == 'release' }}
+#    name: Publishing to NPM
+#    runs-on: ubuntu-20.04
+#    needs: test
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: actions/setup-node@v4
+#        with:
+#          node-version: 16
+#          registry-url: https://registry.npmjs.org
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   prebuild:
     strategy:
@@ -104,7 +103,6 @@ jobs:
     strategy:
       matrix:
         arch:
-          - arm/v7
           - arm64
     name: Prebuild on alpine (${{ matrix.arch }})
     runs-on: ubuntu-latest
@@ -123,7 +121,6 @@ jobs:
     strategy:
       matrix:
         arch:
-          - arm/v7
           - arm64
     name: Prebuild on Linux (${{ matrix.arch }})
     runs-on: ubuntu-latest
